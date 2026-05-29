@@ -3,9 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حكم وأقوال الإمام علي بن أبي طالب</title>
+    <title>موسوعة حكم الإمام علي بن أبي طالب</title>
+    
+    <!-- قسم التصميم CSS مدمج هنا -->
     <style>
-        /* سيتم وضع كود CSS هنا أو في ملف منفصل */
+        :root {
+            --primary-color: #1b4332; /* أخضر إسلامي داكن */
+            --secondary-color: #d8f3dc; /* أخضر فاتح */
+            --accent-color: #d4af37; /* لون ذهبي */
+            --text-color: #333;
+            --bg-color: #f4f6f5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-bottom: 6px solid var(--accent-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: #b5952f;
+            transform: translateY(-2px);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .quote-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-right: 6px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 4rem;
+            border-top: 4px solid var(--accent-color);
+        }
     </style>
 </head>
 <body>
@@ -17,7 +124,8 @@
 
     <main>
         <div class="controls">
-            <button id="randomQuoteBtn">عرض حكمة عشوائية</button>
+            <button onclick="displayRandomQuote()">عرض حكمة عشوائية</button>
+            <button onclick="displayAllQuotes()">عرض جميع الحكم</button>
         </div>
         
         <div id="quotes-container" class="grid-container">
@@ -26,11 +134,59 @@
     </main>
 
     <footer>
-        <p>تم إنشاء هذا الموقع لعرض درر وحكم الإمام علي بن أبي طالب.</p>
+        <p>تم إنشاء هذا الموقع بملف واحد يدمج HTML و CSS و JS لعرض درر الإمام علي.</p>
     </footer>
 
+    <!-- قسم البرمجة والتفاعل JavaScript مدمج هنا -->
     <script>
-        /* سيتم وضع كود JavaScript هنا أو في ملف منفصل */
+        // مصفوفة تحتوي على حكم الإمام علي بن أبي طالب
+        const quotes = [
+            "لا رأي لمن لا يطاع.",
+            "من أعجب برأيه ضل.",
+            "صدر العاقل صندوق سره.",
+            "لا غنى كالعقل، ولا فقر كالجهل، ولا ميراث كالأدب.",
+            "كُنْ فِي الْفِتْنَةِ كَابْنِ اللَّبُونِ لَا ظَهْرٌ فَيُرْكَبَ وَلَا ضَرْعٌ فَيُحْلَبَ.",
+            "أَزْرَى بِنَفْسِهِ مَنِ اسْتَشْعَرَ الطَّمَعَ، وَرَضِيَ بِالذُّلِّ مَنْ كَشَفَ عَنْ ضُرِّهِ.",
+            "لسانك حصانك، إن صنته صانك.",
+            "أعظم الذنوب ما استخف به صاحبه.",
+            "الناس أعداء ما جهلوا.",
+            "من نظر في عيب نفسه اشتغل عن عيب غيره.",
+            "الرغبة إلى الكريم تحركه إلى البذل، وإلى اللئيم تغريه بالطمع.",
+            "آلة السياسة سعة الصدر.",
+            "ثمرة الانس بالله الاستيحاش من الناس.",
+            "مصاحبة الجاهل من أعظم البلاء.",
+            "لا تُضيعَنَّ مالَكَ في غَيرِ مَعْرُوفٍ."
+        ];
+
+        const container = document.getElementById('quotes-container');
+
+        // دالة مساعدة لإنشاء بطاقة الحكمة
+        function createQuoteCard(quoteText) {
+            const card = document.createElement('div');
+            card.className = 'quote-card';
+            card.innerHTML = `<div class="quote-text">« ${quoteText} »</div>`;
+            return card;
+        }
+
+        // دالة لعرض جميع الحكم في الصفحة
+        function displayAllQuotes() {
+            container.innerHTML = ''; // تفريغ الحاوية أولاً
+            quotes.forEach(quote => {
+                container.appendChild(createQuoteCard(quote));
+            });
+        }
+
+        // دالة لعرض حكمة عشوائية واحدة
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            
+            container.innerHTML = ''; // تفريغ الحاوية
+            container.appendChild(createQuoteCard(randomQuote));
+        }
+
+        // عرض جميع الحكم تلقائياً عند فتح الصفحة
+        window.onload = displayAllQuotes;
     </script>
 </body>
 </html>
