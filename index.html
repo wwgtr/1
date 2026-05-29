@@ -2,43 +2,182 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>أقوال وحكم الإمام علي (ع) - iOS Style</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإمام علي بن أبي طالب (عليه السلام) - الموقع الديني</title>
+    <meta name="description" content="موقع ديني شامل عن حياة الإمام علي بن أبي طالب (عليه السلام)، سيرته، مناقبه، أقواله، وزيارته.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- إضافة خط عربي جميل -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { 'arabic': ['Tajawal', 'sans-serif'] },
-                    colors: {
-                        'glass': 'rgba(255, 255, 255, 0.1)',
-                        'glass-border': 'rgba(255, 255, 255, 0.18)',
-                        'ios-bg': '#1C1C1E',
-                        'ios-card': 'rgba(44, 44, 46, 0.8)',
-                    },
-                    backdropBlur: {
-                        'ios': '20px',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        * { font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background: linear-gradient(145deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        /* Glassmorphism محسّن يشبه iOS */
-        .glass-ios {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-           
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- رأس الموقع -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>الإمام علي (ع)</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#biography">السيرة</a></li>
+                <li><a href="#virtues">المناقب</a></li>
+                <li><a href="#quotes">الأقوال</a></li>
+                <li><a href="#visit">الزيارة</a></li>
+                <li><a href="#library">المكتبة</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- القسم الرئيسي (Hero) -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>أمير المؤمنين</h2>
+            <h3>علي بن أبي طالب (عليه السلام)</h3>
+            <p>"أنا مدينة العلم وعلي بابها" - رسول الله (صلى الله عليه وآله)</p>
+            <a href="#biography" class="btn">اقرأ السيرة</a>
+        </div>
+    </section>
+
+    <!-- قسم السيرة -->
+    <section id="biography" class="section">
+        <div class="container">
+            <h2 class="section-title">السيرة الذاتية</h2>
+            <div class="bio-grid">
+                <div class="bio-card">
+                    <h3>النسب والمولد</h3>
+                    <p>ولد الإمام علي بن أبي طالب (عليه السلام) في مكة المكرمة، في جوف الكعبة المشرفة، يوم الجمعة 13 رجب، بعد عام الفيل بثلاثين سنة[1][7].</p>
+                </div>
+                <div class="bio-card">
+                    <h3>نشأته</h3>
+                    <p>تربى في حجر النبي محمد (صلى الله عليه وآله) منذ صغره، وكان أول من آمن به من الصبيان[1].</p>
+                </div>
+                <div class="bio-card">
+                    <h3>خصائصه</h3>
+                    <p>من خصائصه: المبيت في فراش النبي ليلة الهجرة، حمل راية النبي في الغزوات، وكونه وصي النبي وخليفته[11].</p>
+                </div>
+                <div class="bio-card">
+                    <h3>شهادته</h3>
+                    <p>استشهد في ليلة 21 رمضان سنة 40 هـ، بعد أن ضربه عبد الرحمن بن ملجم الخارجي أثناء صلاة الفجر في مسجد الكوفة[1].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المناقب -->
+    <section id="virtues" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">المناقب والفضائل</h2>
+            <div class="virtues-grid">
+                <div class="virtue-card">
+                    <h3>الآيات النازلة</h3>
+                    <p>نزلت فيه آيات كثيرة من القرآن الكريم، منها آية التطهير وآية المباهلة وآية الولاية.</p>
+                </div>
+                <div class="virtue-card">
+                    <h3>الأحاديث النبوية</h3>
+                    <p>وردت أحاديث كثيرة في فضله، مثل: "أنا مدينة العلم وعلي بابها"، وحديث الغدير: "من كنت مولاه فهذا علي مولاه".</p>
+                </div>
+                <div class="virtue-card">
+                    <h3>مناقب خاصة</h3>
+                    <p>اختص بمناقب لم يشاركه فيها أحد: ولد في الكعبة، لم يشرك بالله طرفة عين، زوجته فاطمة سيدة نساء العالمين[10].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأقوال -->
+    <section id="quotes" class="section">
+        <div class="container">
+            <h2 class="section-title">الأقوال والحكم</h2>
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <p>"قيمة كل امرئ ما يحسنه"</p>
+                    <span>— الإمام علي (ع)</span>
+                </div>
+                <div class="quote-card">
+                    <p>"لا تظلمن إذا ما كنت مقتدراً، فالظلم آخره يفضي إلى الندم"</p>
+                    <span>— الإمام علي (ع)</span>
+                </div>
+                <div class="quote-card">
+                    <p>"الصبر مطية لا تكبو"</p>
+                    <span>— الإمام علي (ع)</span>
+                </div>
+                <div class="quote-card">
+                    <p>"العلم خير من المال، العلم يحرسك وأنت تحرس المال"</p>
+                    <span>— الإمام علي (ع)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الزيارة -->
+    <section id="visit" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">الزيارة</h2>
+            <div class="visit-content">
+                <div class="visit-text">
+                    <h3>الزيارة الافتراضية</h3>
+                    <p>يمكنكم زيارة العتبة العلوية المقدسة افتراضياً من خلال الخدمة المقدمة من شبكة الإمام علي (عليه السلام)[1].</p>
+                    <a href="#" class="btn">زيارة افتراضية</a>
+                </div>
+                <div class="visit-image">
+                    &lt;img src="images/shrine.jpg" alt="الحرم العلوي الشريف" loading="lazy"&gt;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المكتبة -->
+    <section id="library" class="section">
+        <div class="container">
+            <h2 class="section-title">المكتبة</h2>
+            <div class="library-grid">
+                <div class="book-card">
+                    <h3>سيرة الإمام علي (ع)</h3>
+                    <p>كتاب شامل عن سيرة الإمام من ولادته إلى شهادته[6].</p>
+                    <a href="#" class="btn-small">تحميل</a>
+                </div>
+                <div class="book-card">
+                    <h3>نهج البلاغة</h3>
+                    <p>مجموعة خطب ورسائل وحكم الإمام علي (ع)[1].</p>
+                    <a href="#" class="btn-small">تحميل</a>
+                </div>
+                <div class="book-card">
+                    <h3>دور الإمام علي في بناء الدولة</h3>
+                    <p>دراسة تحليلية لدوره في بناء الدولة الإسلامية على أساس العدل[9].</p>
+                    <a href="#" class="btn-small">تحميل</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم اتصل بنا -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">اتصل بنا</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="الاسم" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <textarea placeholder="رسالتك" rows="5" required></textarea>
+                <button type="submit" class="btn">إرسال</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- تذييل الموقع -->
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة © 2026 - موقع الإمام علي بن أبي طالب (عليه السلام)</p>
+            <p>اللهم صل على محمد وآل محمد</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
