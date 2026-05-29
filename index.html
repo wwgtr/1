@@ -2,86 +2,35 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>واجهة iOS - الأقوال</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكم وأقوال الإمام علي بن أبي طالب</title>
+    <style>
+        /* سيتم وضع كود CSS هنا أو في ملف منفصل */
+    </style>
 </head>
 <body>
-    <div class="iphone">
-        <!-- شريط الحالة (Status Bar) -->
-        <div class="status-bar">
-            <div class="status-left">
-                <span class="time">9:41</span>
-            </div>
-            <div class="status-right">
-                <span class="battery">🔋</span>
-                <span class="wifi">📶</span>
-                <span class="signal">📡</span>
-            </div>
-        </div>
 
-        <!-- شاشة التطبيقات (Home Screen) -->
-        <div class="home-screen" id="homeScreen">
-            <div class="app-grid">
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon quotes-icon">💬</div>
-                    <span class="app-name">الأقوال</span>
-                </div>
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon quotes-icon">📜</div>
-                    <span class="app-name">حكم</span>
-                </div>
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon quotes-icon">✨</div>
-                    <span class="app-name">مواعظ</span>
-                </div>
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon quotes-icon">📖</div>
-                    <span class="app-name">اقتباسات</span>
-                </div>
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon quotes-icon">🌙</div>
-                    <span class="app-name">حكمة</span>
-                </div>
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon quotes-icon">💡</div>
-                    <span class="app-name">نور</span>
-                </div>
-            </div>
-            <!-- شريط الإرساء (Dock) -->
-            <div class="dock">
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon dock-icon">📱</div>
-                    <span class="app-name">الأقوال</span>
-                </div>
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon dock-icon">📞</div>
-                    <span class="app-name">هاتف</span>
-                </div>
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon dock-icon">🌐</div>
-                    <span class="app-name">سفاري</span>
-                </div>
-                <div class="app" onclick="showQuotes()">
-                    <div class="app-icon dock-icon">🎵</div>
-                    <span class="app-name">موسيقى</span>
-                </div>
-            </div>
-        </div>
+    <header>
+        <h1>روائع حكم الإمام علي (عليه السلام)</h1>
+        <p>موسوعة مصغرة لأبرز أقوال وحكم أمير المؤمنين</p>
+    </header>
 
-        <!-- شاشة عرض الأقوال (Quotes Screen) -->
-        <div class="quotes-screen" id="quotesScreen" style="display: none;">
-            <div class="quotes-header">
-                <button class="back-button" onclick="goHome()">← رجوع</button>
-                <h2>الأقوال المأثورة</h2>
-            </div>
-            <div class="quotes-container" id="quotesContainer">
-                <!-- سيتم عرض الأقوال هنا -->
-            </div>
+    <main>
+        <div class="controls">
+            <button id="randomQuoteBtn">عرض حكمة عشوائية</button>
         </div>
-    </div>
+        
+        <div id="quotes-container" class="grid-container">
+            <!-- سيتم إضافة الحكم هنا تلقائياً عبر JavaScript -->
+        </div>
+    </main>
 
-    <script src="quotes.js"></script>
-    <script src="script.js"></script>
+    <footer>
+        <p>تم إنشاء هذا الموقع لعرض درر وحكم الإمام علي بن أبي طالب.</p>
+    </footer>
+
+    <script>
+        /* سيتم وضع كود JavaScript هنا أو في ملف منفصل */
+    </script>
 </body>
 </html>
